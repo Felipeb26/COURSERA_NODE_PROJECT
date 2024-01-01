@@ -1,9 +1,9 @@
-const departments = {
-    GENERAL_DENTISTRY: "General Dentistry",
-    PEDIATRIC_DENTISTRY: "Pediatric Dentistry",
-    RESTORATIVE_DENTISTRY: "Restorative Dentistry",
-    SURGERY: "Surgery",
-    ORTHODONTICS: "Orthodontics"
+export enum departments {
+    GENERAL_DENTISTRY = "General Dentistry",
+    PEDIATRIC_DENTISTRY = "Pediatric Dentistry",
+    RESTORATIVE_DENTISTRY = "Restorative Dentistry",
+    SURGERY = "Surgery",
+    ORTHODONTICS = "Orthodontics"
 }
 
 export type DEPARTMENTS = typeof departments

@@ -4,6 +4,8 @@ import express from "express"
 import expressWinston from "express-winston"
 import { format, transports } from "winston"
 import { router } from "../controller/employee.controller"
+import { traceRoute, restResponseTimeHistogram } from "./tracing.middleware"
+import responseTime from "response-time"
 
 export const app = express()
 
@@ -31,3 +33,13 @@ app.use(expressWinston.logger({
 }))
 
 app.use(router)
+app.use(traceRoute)
+app.use(responseTime((req: any, res: any, time: number) => {
+    if (req?.route?.path) {
+        restResponseTimeHistogram.observe({
+            "route": req.route,
+            "method": req.method,
+            "status_code": res.statusCode
+        }, time * 1000)
+    }
+}))

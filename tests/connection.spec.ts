@@ -5,7 +5,6 @@ import { env } from "../src/config/env/env";
 const connect = async () => {
     const url = `mongodb+srv://batsworks:${encodeURIComponent(env.DB_PASS)}@acesspoint.egw5k9l.mongodb.net/?retryWrites=true&w=majority`
 
-    console.log(url)
     const mongo = await MongoClient.connect(url)
     await mongo.connect()
 
