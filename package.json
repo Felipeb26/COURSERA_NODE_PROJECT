@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"start": "node api/server.js",
+		"start": "node dist/server.js",
 		"start:dev": "tsx watch src/server.ts",
 		"build": "tsup src",
 		"test": "vitest"

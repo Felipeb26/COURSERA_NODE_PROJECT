@@ -20,9 +20,7 @@ app.use(expressWinston.logger({
             level: "error",
             filename: "coursera.error.log"
         }),
-        new transports.Console({
-            level: "error"
-        })
+        new transports.Console()
     ],
     format: format.combine(
         format.json(),
