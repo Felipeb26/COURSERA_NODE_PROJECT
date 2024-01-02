@@ -1,28 +1,39 @@
-import express from "express"
-import client from "prom-client"
+import { DiagConsoleLogger, DiagLogLevel, diag, trace } from '@opentelemetry/api';
+import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-http";
+import { HttpInstrumentation } from '@opentelemetry/instrumentation-http';
+import { B3Propagator } from "@opentelemetry/propagator-b3";
+import { Resource } from '@opentelemetry/resources';
+import { NodeSDK } from '@opentelemetry/sdk-node';
+import { SimpleSpanProcessor } from '@opentelemetry/sdk-trace-base';
+import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
 
-export const traceRoute = express.Router()
 
-export const restResponseTimeHistogram = new client.Histogram({
-    name: "rest_response_time_duration_seconds",
-    help: "Rest API response time in seconds",
-    labelNames: ["method", "route", "status_code"]
+diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
+
+const traceExporter = new OTLPTraceExporter({
+    url: "http://localhost:9411/spans"
 })
 
-const databaseResponseTimeHistogram = new client.Histogram({
-    name: "db_response_time_in_duration_seconds",
-    help: "Database Metrics response time in seconds",
-    labelNames: ["operation", "sucess"]
+export const getTracer = () => {
+    return trace.getTracer("default")
+}
+
+const sdk = new NodeSDK({
+    resource: new Resource({
+        [SemanticResourceAttributes.SERVICE_NAME]: "MANAGEMENT",
+        [SemanticResourceAttributes.SERVICE_VERSION]: "1.0.0"
+    }),
+    spanProcessor: new SimpleSpanProcessor(traceExporter),
+    traceExporter: traceExporter,
+    instrumentations: [new HttpInstrumentation()],
+    textMapPropagator: new B3Propagator()
 })
 
+sdk.start();
 
-
-const collectDefaultMetrics = client.collectDefaultMetrics
-collectDefaultMetrics()
-
-
-traceRoute.get("/metrics", async (req, res) => {
-    res.set("Contenty-Type", client.register.contentType)
-
-    return res.send(await client.register.metrics())
+process.on('SIGTERM', () => {
+    sdk.shutdown()
+        .then(() => console.log('SDK shut down successfully'))
+        .catch((err) => console.log(`Error shutting down SDK, ${err}`))
+        .finally(() => process.exit(0))
 })

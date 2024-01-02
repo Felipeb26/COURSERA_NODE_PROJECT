@@ -1,0 +1,365 @@
+{
+  meta: {
+    req: {
+      url: '/v1/employee',
+      headers: {
+        host: 'localhost:3000',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Brave";v="120"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'sec-gpc': '1',
+        'accept-language': 'en-US,en;q=0.9',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        cookie: 'grafana_sess=2efb830fc9e33482; _dd_s=logs=1&id=addd619d-d208-4e15-8fd0-7b779da0ec7e&created=1704216618650&expire=1704220606542',
+        'if-none-match': 'W/"4d4-HiIzQW//vsctW8GUw6UxR68hOdQ"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/v1/employee',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 16
+  },
+  level: 'info',
+  message: 'HTTP GET /v1/employee',
+  timestamp: '2024-01-02T18:22:33.387Z'
+}
+{
+  meta: {
+    req: {
+      url: '/v1/employee',
+      headers: {
+        host: 'localhost:3000',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Brave";v="120"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'sec-gpc': '1',
+        'accept-language': 'en-US,en;q=0.9',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        cookie: 'grafana_sess=2efb830fc9e33482; _dd_s=logs=1&id=1dfbca15-5c42-4170-a0c2-0ade09d1f217&created=1704222170474&expire=1704225263132'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/v1/employee',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 17
+  },
+  level: 'info',
+  message: 'HTTP GET /v1/employee',
+  timestamp: '2024-01-02T19:39:25.435Z'
+}
+{
+  meta: {
+    req: {
+      url: '/favicon.ico',
+      headers: {
+        host: 'localhost:3000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Brave";v="120"',
+        'sec-ch-ua-mobile': '?0',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'sec-ch-ua-platform': '"Windows"',
+        accept: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+        'sec-gpc': '1',
+        'accept-language': 'en-US,en;q=0.9',
+        'sec-fetch-site': 'same-origin',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-dest': 'image',
+        referer: 'http://localhost:3000/v1/employee',
+        'accept-encoding': 'gzip, deflate, br',
+        cookie: 'grafana_sess=2efb830fc9e33482; _dd_s=logs=1&id=1dfbca15-5c42-4170-a0c2-0ade09d1f217&created=1704222170474&expire=1704225265560'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/favicon.ico',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'HTTP GET /favicon.ico',
+  timestamp: '2024-01-02T19:39:25.677Z'
+}
+{
+  meta: {
+    req: {
+      url: '/metrics',
+      headers: {
+        host: 'localhost:3000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Brave";v="120"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'sec-gpc': '1',
+        'accept-language': 'en-US,en;q=0.9',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        cookie: 'grafana_sess=2efb830fc9e33482; _dd_s=logs=1&id=1dfbca15-5c42-4170-a0c2-0ade09d1f217&created=1704222170474&expire=1704225565853'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/metrics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 7
+  },
+  level: 'info',
+  message: 'HTTP GET /metrics',
+  timestamp: '2024-01-02T19:44:30.057Z'
+}
+{
+  meta: {
+    req: {
+      url: '/v1/employee',
+      headers: {
+        host: 'localhost:3000',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Brave";v="120"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'sec-gpc': '1',
+        'accept-language': 'en-US,en;q=0.9',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        cookie: 'grafana_sess=2efb830fc9e33482; _dd_s=logs=1&id=1dfbca15-5c42-4170-a0c2-0ade09d1f217&created=1704222170474&expire=1704225628984',
+        'if-none-match': 'W/"4d4-HiIzQW//vsctW8GUw6UxR68hOdQ"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/v1/employee',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 9
+  },
+  level: 'info',
+  message: 'HTTP GET /v1/employee',
+  timestamp: '2024-01-02T19:45:30.766Z'
+}
+{
+  meta: {
+    req: {
+      url: '/v1/employee',
+      headers: {
+        host: 'localhost:3000',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Brave";v="120"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'sec-gpc': '1',
+        'accept-language': 'en-US,en;q=0.9',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        cookie: 'grafana_sess=2efb830fc9e33482; _dd_s=logs=1&id=1dfbca15-5c42-4170-a0c2-0ade09d1f217&created=1704222170474&expire=1704225631015',
+        'if-none-match': 'W/"4d4-HiIzQW//vsctW8GUw6UxR68hOdQ"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/v1/employee',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 21
+  },
+  level: 'info',
+  message: 'HTTP GET /v1/employee',
+  timestamp: '2024-01-02T19:45:51.524Z'
+}
+{
+  meta: {
+    req: {
+      url: '/metrics',
+      headers: {
+        host: 'localhost:3000',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Brave";v="120"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'sec-gpc': '1',
+        'accept-language': 'en-US,en;q=0.9',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br',
+        cookie: 'grafana_sess=2efb830fc9e33482; grafana_session=3b6a949cefd09734b060a32dfb3d539a; grafana_session_expiry=1704226771; _dd_s=logs=1&id=ab4177fb-6be3-4ab6-b127-ff0b10092f41&created=1704229334284&expire=1704230236428',
+        'if-none-match': 'W/"1ba5-ObOPkRxPk7PqyMt+clrsNTEAqKE"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/metrics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 6
+  },
+  level: 'info',
+  message: 'HTTP GET /metrics',
+  timestamp: '2024-01-02T21:02:59.842Z'
+}
+{
+  meta: {
+    req: {
+      url: '/metrics',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'user-agent': 'axios/1.6.3',
+        'accept-encoding': 'gzip, compress, deflate, br',
+        b3: '4a0c2c061bbfbb25b94eb3d1d47a24ed-8a1e9f5bc32f1c37-1',
+        host: 'localhost:3000',
+        connection: 'close'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/metrics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 6
+  },
+  level: 'info',
+  message: 'HTTP GET /metrics',
+  timestamp: '2024-01-02T21:11:00.050Z'
+}
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'user-agent': 'axios/1.6.3',
+        'accept-encoding': 'gzip, compress, deflate, br',
+        b3: '676b10db0cb6db217453203f2655e0bd-f1c4d0d0fb334461-1',
+        host: 'localhost:3000',
+        connection: 'close'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'HTTP GET /',
+  timestamp: '2024-01-02T21:12:00.036Z'
+}
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'user-agent': 'axios/1.6.3',
+        'accept-encoding': 'gzip, compress, deflate, br',
+        b3: '96104584eff1070b5bf41844f5ac4483-a8244fd0fc26859f-1',
+        host: 'localhost:3000',
+        connection: 'close'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1
+  },
+  level: 'info',
+  message: 'HTTP GET /',
+  timestamp: '2024-01-02T21:13:00.045Z'
+}
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'user-agent': 'axios/1.6.3',
+        'accept-encoding': 'gzip, compress, deflate, br',
+        b3: '586b3868cb4f025cd260a082d2a0a797-d14d1090bd341918-1',
+        host: 'localhost:3000',
+        connection: 'close'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1
+  },
+  level: 'info',
+  message: 'HTTP GET /',
+  timestamp: '2024-01-02T21:14:00.043Z'
+}
+{
+  meta: {
+    req: {
+      url: '/',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'user-agent': 'axios/1.6.3',
+        'accept-encoding': 'gzip, compress, deflate, br',
+        b3: '81cb03adf881fcd8c412c57aeaef99ac-42755f87150ee3d1-1',
+        host: 'localhost:3000',
+        connection: 'close'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'HTTP GET /',
+  timestamp: '2024-01-02T21:15:00.044Z'
+}

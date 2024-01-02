@@ -1,4 +1,7 @@
 import { z } from "zod"
+import schedule from "node-schedule"
+import axios from "axios"
+
 require("dotenv").config()
 
 const envSchema = z.object({
@@ -9,3 +12,9 @@ const envSchema = z.object({
 
 const envs = process.env;
 export const env = envSchema.parse(envs)
+
+schedule.scheduleJob("0 * * * * *", () => {
+    axios.get("http://localhost:3000/")
+        .then((data: any) => console.log("Working"))
+        .catch((err: any) => console.log(err))
+})
