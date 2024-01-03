@@ -14,7 +14,9 @@ const envs = process.env;
 export const env = envSchema.parse(envs)
 
 schedule.scheduleJob("0 * * * * *", () => {
-    axios.get("http://localhost:3000/")
+    axios({
+        headers: { Accept: 'text/html, application/json, text/plain, */*' },
+        url:"http://127.0.0.1:3000/"})
         .then((data: any) => console.log("Working"))
-        .catch((err: any) => console.log(err))
+        .catch((err: any) => console.log(err.message))
 })

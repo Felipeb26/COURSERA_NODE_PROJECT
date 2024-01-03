@@ -1,39 +1,48 @@
-import { DiagConsoleLogger, DiagLogLevel, diag, trace } from '@opentelemetry/api';
-import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-http";
-import { HttpInstrumentation } from '@opentelemetry/instrumentation-http';
-import { B3Propagator } from "@opentelemetry/propagator-b3";
-import { Resource } from '@opentelemetry/resources';
-import { NodeSDK } from '@opentelemetry/sdk-node';
-import { SimpleSpanProcessor } from '@opentelemetry/sdk-trace-base';
-import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
+import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
+import { JaegerExporter } from "@opentelemetry/exporter-jaeger"
+import { registerInstrumentations } from "@opentelemetry/instrumentation"
+import { ExpressInstrumentation } from "@opentelemetry/instrumentation-express"
+import { HttpInstrumentation } from "@opentelemetry/instrumentation-http"
+import { OTTracePropagator } from "@opentelemetry/propagator-ot-trace"
+import { Resource } from "@opentelemetry/resources"
+import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node"
+import { SemanticResourceAttributes } from "@opentelemetry/semantic-conventions"
+import { BatchSpanProcessor } from "@opentelemetry/sdk-trace-base"
 
 
-diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
 
-const traceExporter = new OTLPTraceExporter({
-    url: "http://localhost:9411/spans"
-})
+const init = (serviceName: string, environment: string = "production") => {
 
-export const getTracer = () => {
-    return trace.getTracer("default")
+    // User Collector Or Jaeger Exporter
+    //const exporter = new CollectorTraceExporter(options)
+
+    const exporter = new OTLPTraceExporter({url: ""})
+
+    const provider = new NodeTracerProvider({
+        resource: new Resource({
+            [SemanticResourceAttributes.SERVICE_NAME]: serviceName, // Service name that showuld be listed in jaeger ui
+            [SemanticResourceAttributes.DEPLOYMENT_ENVIRONMENT]: environment,
+        }),
+    })
+
+    //provider.addSpanProcessor(new SimpleSpanProcessor(exporter))
+
+    // Use the BatchSpanProcessor to export spans in batches in order to more efficiently use resources.
+    provider.addSpanProcessor(new BatchSpanProcessor(exporter))
+
+    // Enable to see the spans printed in the console by the ConsoleSpanExporter
+    // provider.addSpanProcessor(new SimpleSpanProcessor(new ConsoleSpanExporter()))
+
+    provider.register({ propagator: new OTTracePropagator() })
+
+    console.log("tracing initialized")
+
+    registerInstrumentations({
+        instrumentations: [new ExpressInstrumentation(), new HttpInstrumentation()],
+    })
+
+    const tracer = provider.getTracer(serviceName)
+    return { tracer }
 }
 
-const sdk = new NodeSDK({
-    resource: new Resource({
-        [SemanticResourceAttributes.SERVICE_NAME]: "MANAGEMENT",
-        [SemanticResourceAttributes.SERVICE_VERSION]: "1.0.0"
-    }),
-    spanProcessor: new SimpleSpanProcessor(traceExporter),
-    traceExporter: traceExporter,
-    instrumentations: [new HttpInstrumentation()],
-    textMapPropagator: new B3Propagator()
-})
-
-sdk.start();
-
-process.on('SIGTERM', () => {
-    sdk.shutdown()
-        .then(() => console.log('SDK shut down successfully'))
-        .catch((err) => console.log(`Error shutting down SDK, ${err}`))
-        .finally(() => process.exit(0))
-})
+export default init
