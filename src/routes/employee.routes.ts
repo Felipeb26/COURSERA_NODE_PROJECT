@@ -13,7 +13,7 @@ export const findAllDepartments = async (req: express.Request, res: express.Resp
         exportTrace(req, res, result)
         return res.status(StatusCode.OK).send(result)
     } catch (error: any) {
-        //recordExceptionTrace(error)
+        exportTrace(req, res, error, "error")
         return res.status(StatusCode.BAD_REQUEST).send({ "error": error.message })
     }
 }
