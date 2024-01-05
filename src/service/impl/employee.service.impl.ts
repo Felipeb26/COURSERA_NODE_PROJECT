@@ -9,7 +9,13 @@ const EMPLOYEE_COLLECTION = connect("employee")
 export class EmployeeServiceImpl<EmployeeModel> implements CrudService<EmployeeModel>{
 
     async getAllDepartments() {
-        return departments
+        const departmentsArray = [departments.GENERAL_DENTISTRY, departments.ORTHODONTICS, departments.PEDIATRIC_DENTISTRY, departments.RESTORATIVE_DENTISTRY, departments.SURGERY]
+
+        let department: { name: departments; }[] = [];
+        departmentsArray.map((obj, id) => {
+            department.push({ "name": obj })
+        })
+        return department
     }
 
     async findAll() {
